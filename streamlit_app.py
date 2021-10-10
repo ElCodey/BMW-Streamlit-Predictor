@@ -28,7 +28,7 @@ def main(model):
               'fuel_Petrol', 'fuel_Petrol/electric', 'fuel_Petrol/plugin',
               'fuel_Plug_in_hybrid'])
        drive_type = st.selectbox('Drive Type', ['drive_type_Automatic', 'drive_type_Manual',
-              'drive_type_Semi', 'drive_type_Semi-automatic', 'drive_type_Semiauto',
+              'drive_type_Semi', 
               'drive_type_electric', 'drive_type_h', 'drive_type_hybri',
               'drive_type_rex', 'drive_type_•'])
 
@@ -51,7 +51,7 @@ def main(model):
               'fuel_Petrol': 0, 'fuel_Petrol/electric': 0, 'fuel_Petrol/plugin': 0,
               'fuel_Plug_in_hybrid': 0,
               'drive_type_Automatic': 0, 'drive_type_Manual': 0,
-              'drive_type_Semi': 0, 'drive_type_Semi-automatic': 0, 'drive_type_Semiauto': 0,
+              'drive_type_Semi': 0, 
               'drive_type_electric': 0, 'drive_type_h': 0, 'drive_type_hybri': 0,
               'drive_type_rex': 0, 'drive_type_•': 0}
 

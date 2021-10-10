@@ -20,6 +20,8 @@ def specs_clean(df):
     df["miles"] = df["miles"].str.replace(",", "")
     df["fuel"] = df["specs"].str[5]
     df["drive_type"] = df["specs"].str[7]
+    df["drive_type"] = df["drive_type"].str.replace("Semi-automatic", "Semi")
+    df["drive_type"] = df["drive_type"].str.replace("Semiauto", "Semi")
     df = df.drop("specs", axis=1)
     df = df.dropna()
 
