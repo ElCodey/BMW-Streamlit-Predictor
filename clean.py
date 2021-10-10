@@ -45,7 +45,9 @@ def miles_clean(df):
     return df
 
 def make_dummies(df):
-    return pd.get_dummies(df)
+    df_dum =  pd.get_dummies(df)
+    df_dum = df_dum.drop(["drive_type_rex", "drive_type_•", "drive_type_h"], axis=1)
+    return df_dum
 
 def complete_clean(df):
     df = car_type_clean(df)
