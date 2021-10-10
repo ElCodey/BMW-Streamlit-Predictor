@@ -53,7 +53,7 @@ def main(model):
               'Semi': 0, 
               'electric': 0, 'hybri': 0}
 
-       binary_values["miles"] = miles
+       binary_values["miles"] = 1 / miles
        for i in binary_values:
               if type == i:
                      binary_values[i] = 1
