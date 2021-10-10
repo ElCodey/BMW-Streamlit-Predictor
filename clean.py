@@ -39,6 +39,7 @@ def price_clean(df):
 
 def miles_clean(df):
     df["miles"] = df["miles"].apply(lambda x: int(x))
+    df["miles"] = df["miles"].apply(lambda x: 1/x)
     return df
 
 def make_dummies(df):
