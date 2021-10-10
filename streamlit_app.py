@@ -34,7 +34,7 @@ def main(model):
 
 
 
-       binary_values = {"miles": 0,
+       binary_values = {"miles": 0.01,
               '1 Series ': 0, '2 Series ':0, 'Active Tourer': 0,
               'Gran Tourer': 0, '3 Series ': 0, '4 Series ': 0, 'Gran Coupe': 0,
               '5 Series ': 0, 'Gran Turismo': 0, '6 Series ': 0, '7 Series ': 0, '8 Series ': 0,
