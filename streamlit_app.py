@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import joblib
 
-@st.cache
+
 def load_model():
        loaded_model = joblib.load("bmw_linear_model_new.sav")
        return loaded_model
@@ -29,7 +29,7 @@ def main(model):
               'Plug_in_hybrid'])
        drive_type = st.selectbox('Drive Type', ['Automatic', 'Manual',
               'Semi', 
-              'electric', 'hybri',])
+              'electric', 'hybrid',])
 
 
 
@@ -51,7 +51,7 @@ def main(model):
               'Plug_in_hybrid': 0,
               'Automatic': 0, 'Manual': 0,
               'Semi': 0, 
-              'electric': 0, 'hybri': 0}
+              'electric': 0, 'hybrid': 0}
 
        try:       
               binary_values["miles"] = 1 / miles
