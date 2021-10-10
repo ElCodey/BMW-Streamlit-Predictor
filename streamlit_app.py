@@ -13,45 +13,45 @@ def main(model):
        st.title("BMW Price Predictor")
 
        miles = st.number_input('Enter Miles')
-       type = st.selectbox('BMW Model', ['car_ 1_series ', 'car_ 2_series ', 'car_ 2  Active Tourer',
-              'car_ 2  Gran Tourer', 'car_ 3_series ', 'car_ 4_series ', 'car_ 4  Gran Coupe',
-              'car_ 5_series ', 'car_ 5  Gran Turismo', 'car_ 6_series ', 'car_ 7_series ', 'car_ 8_series ',
-              'car_ M2', 'car_ M3', 'car_ M4', 'car_ M5', 'car_ X1', 'car_ X2',
-              'car_ X3', 'car_ X4', 'car_ X5', 'car_ X6', 'car_ Z4', 'car_ i3',])
-       year = st.selectbox('Year', ['year_1986', 'year_1989', 'year_1996', 'year_1999', 'year_2000',
-              'year_2001', 'year_2002', 'year_2003', 'year_2004', 'year_2005',
-              'year_2006', 'year_2007', 'year_2008', 'year_2009', 'year_2010',
-              'year_2011', 'year_2012', 'year_2013', 'year_2014', 'year_2015',
-              'year_2016', 'year_2017', 'year_2018', 'year_2019', 'year_2020',
-              'year_2021'])
-       fuel = st.selectbox('Fuel Type', ['fuel_Diesel', 'fuel_Electric', 'fuel_Hybrid',
-              'fuel_Petrol', 'fuel_Petrol/electric', 'fuel_Petrol/plugin',
-              'fuel_Plug_in_hybrid'])
-       drive_type = st.selectbox('Drive Type', ['drive_type_Automatic', 'drive_type_Manual',
-              'drive_type_Semi', 
-              'drive_type_electric', 'drive_type_hybri',])
+       type = st.selectbox('BMW Model', ['1 Series', '2 Series', 'Active Tourer',
+              'Gran Tourer', '3 Series', '4 Series', 'Gran Coupe',
+              '5 Series', 'Gran Turismo', '6 Series', '7 Series', '8 Series',
+              'M2', 'M3', 'M4', 'M5', 'X1', 'X2',
+              'X3', 'X4', 'X5', 'X6', 'Z4', 'I3',])
+       year = st.selectbox('Year', ['1986', '1989', '1996', '1999', '2000',
+              '2001', '2002', '2003', '2004', '2005',
+              '2006', '2007', '2008', '2009', '2010',
+              '2011', '2012', '2013', '2014', '2015',
+              '2016', '2017', '2018', '2019', '2020',
+              '2021'])
+       fuel = st.selectbox('Fuel Type', ['Diesel', 'Electric', 'Hybrid',
+              'Petrol', 'Petrol/electric', 'Petrol/plugin',
+              'Plug_in_hybrid'])
+       drive_type = st.selectbox('Drive Type', ['Automatic', 'Manual',
+              'Semi', 
+              'electric', 'hybri',])
 
 
 
 
        binary_values = {"miles": 0,
-              'car_ 1_series ': 0, 'car_ 2_series ':0, 'car_ 2  Active Tourer': 0,
-              'car_ 2  Gran Tourer': 0, 'car_ 3_series ': 0, 'car_ 4_series ': 0, 'car_ 4  Gran Coupe': 0,
-              'car_ 5_series ': 0, 'car_ 5  Gran Turismo': 0, 'car_ 6_series ': 0, 'car_ 7_series ': 0, 'car_ 8_series ': 0,
-              'car_ M2': 0, 'car_ M3': 0, 'car_ M4': 0, 'car_ M5': 0, 'car_ X1': 0, 'car_ X2': 0,
-              'car_ X3': 0, 'car_ X4': 0, 'car_ X5': 0, 'car_ X6': 0, 'car_ Z4': 0, 'car_ i3': 0,
-              'year_1986': 0, 'year_1989': 0, 'year_1996': 0, 'year_1999': 0, 'year_2000': 0,
-              'year_2001': 0, 'year_2002': 0, 'year_2003': 0, 'year_2004': 0, 'year_2005': 0,
-              'year_2006': 0, 'year_2007': 0, 'year_2008': 0, 'year_2009': 0, 'year_2010': 0,
-              'year_2011': 0, 'year_2012': 0, 'year_2013': 0, 'year_2014': 0, 'year_2015': 0,
-              'year_2016': 0, 'year_2017': 0, 'year_2018': 0, 'year_2019': 0, 'year_2020': 0,
-              'year_2021': 0,
-              'fuel_Diesel': 0, 'fuel_Electric': 0, 'fuel_Hybrid': 0,
-              'fuel_Petrol': 0, 'fuel_Petrol/electric': 0, 'fuel_Petrol/plugin': 0,
-              'fuel_Plug_in_hybrid': 0,
-              'drive_type_Automatic': 0, 'drive_type_Manual': 0,
-              'drive_type_Semi': 0, 
-              'drive_type_electric': 0, 'drive_type_hybri': 0}
+              '1 Series ': 0, '2 Series ':0, 'Active Tourer': 0,
+              'Gran Tourer': 0, '3 Series ': 0, '4 Series ': 0, 'Gran Coupe': 0,
+              '5 Series ': 0, 'Gran Turismo': 0, '6 Series ': 0, '7 Series ': 0, '8 Series ': 0,
+              'M2': 0, 'M3': 0, 'M4': 0, 'M5': 0, 'X1': 0, 'X2': 0,
+              'X3': 0, 'X4': 0, 'X5': 0, 'X6': 0, 'Z4': 0, 'i3': 0,
+              '1986': 0, '1989': 0, '1996': 0, '1999': 0, '2000': 0,
+              '2001': 0, '2002': 0, '2003': 0, '2004': 0, '2005': 0,
+              '2006': 0, '2007': 0, '2008': 0, '2009': 0, '2010': 0,
+              '2011': 0, '2012': 0, '2013': 0, '2014': 0, '2015': 0,
+              '2016': 0, '2017': 0, '2018': 0, '2019': 0, '2020': 0,
+              '2021': 0,
+              'Diesel': 0, 'Electric': 0, 'Hybrid': 0,
+              'Petrol': 0, 'Petrol/electric': 0, 'Petrol/plugin': 0,
+              'Plug_in_hybrid': 0,
+              'Automatic': 0, 'Manual': 0,
+              'Semi': 0, 
+              'electric': 0, 'hybri': 0}
 
        binary_values["miles"] = miles
        for i in binary_values:
