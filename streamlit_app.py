@@ -5,7 +5,7 @@ import joblib
 
 @st.cache
 def load_model():
-       loaded_model = joblib.load("bmw_linear_model.sav")
+       loaded_model = joblib.load("bmw_linear_model_new.sav")
        return loaded_model
 
 def main(model):
