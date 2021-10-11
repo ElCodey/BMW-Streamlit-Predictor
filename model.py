@@ -1,5 +1,6 @@
 import pandas as pd
 from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
 
@@ -12,6 +13,13 @@ def split(df):
 
 def lin_model(X_train, X_test, y_train):
     model = LinearRegression()
+    model = model.fit(X_train, y_train)
+    y_pred = model.predict(X_test)
+
+    return model, y_pred
+
+def gboost_model(X_train, X_test, y_train):
+    model = GradientBoostingRegressor()
     model = model.fit(X_train, y_train)
     y_pred = model.predict(X_test)
 

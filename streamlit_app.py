@@ -5,7 +5,7 @@ import joblib
 
 
 def load_model():
-       loaded_model = joblib.load("bmw_linear_model_new.sav")
+       loaded_model = joblib.load("gboost_model.sav")
        return loaded_model
 
 def main(model):
@@ -32,8 +32,6 @@ def main(model):
               'electric', 'hybrid',])
 
 
-
-
        binary_values = {"miles": 0,
               '1 Series ': 0, '2 Series ':0, 'Active Tourer': 0,
               'Gran Tourer': 0, '3 Series ': 0, '4 Series ': 0, 'Gran Coupe': 0,
@@ -53,10 +51,12 @@ def main(model):
               'Semi': 0, 
               'electric': 0, 'hybrid': 0}
 
+      
        try:       
               binary_values["miles"] = 1 / miles
        except ZeroDivisionError:
               binary_values["miles"] = 0
+
        for i in binary_values:
               if type == i:
                      binary_values[i] = 1
@@ -67,7 +67,7 @@ def main(model):
               if drive_type == i:
                      binary_values[i] = 1
 
-
+       
        if st.button("Predict Price"):
               result = model.predict(np.array(list(binary_values.values())).reshape(1,-1)).round(2)
               st.text("Predicted price is £{}".format(result[0]))
