@@ -13,7 +13,7 @@ def main(model):
        st.title("BMW Price Predictor")
 
        miles = st.number_input('Enter Miles')
-       type = st.selectbox('BMW Model', ['1 Series', '2 Series', 'Active Tourer',
+       car_type = st.selectbox('BMW Model', ['1 Series', '2 Series', 'Active Tourer',
               'Gran Tourer', '3 Series', '4 Series', 'Gran Coupe',
               '5 Series', 'Gran Turismo', '6 Series', '7 Series', '8 Series',
               'M2', 'M3', 'M4', 'M5', 'X1', 'X2',
@@ -58,7 +58,7 @@ def main(model):
               binary_values["miles"] = 0
 
        for i in binary_values:
-              if type == i:
+              if car_type == i:
                      binary_values[i] = 1
               if year == i:
                      binary_values[i] = 1
